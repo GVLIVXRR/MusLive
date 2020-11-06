@@ -28,7 +28,7 @@ class Quadratic extends Linear implements EquationInterface
             return $this->x = array(-($b / 2 * $a));
         }
 
-        
+        throw new AbramchukException("Ошибка: уравнение не имеет корней");
         //return $this->x = null;
 
     }

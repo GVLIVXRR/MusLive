@@ -8,7 +8,7 @@ class Linear
     public function line_equation($a, $b)
     {
         if ($a == 0) {
-            
+            throw new AbramchukException("Ошибка: уравнение не существует");
         }
         MyLog::log("Определено что это линейное уравнение");
         return $this->x = array(-($b / $a));
