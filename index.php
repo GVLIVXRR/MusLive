@@ -1,35 +1,50 @@
 <?php
 
-class A
-{
+class A {
+    protected $x;
 
+    public function line_equation($a, $b) {
+        return $a != 0 ? $this->x = (-$b)/$a : null;
+    }
 }
 
+/*$Axb = new A();
+print_r($Axb->line_equation(3,2));*/
 class B extends A
 {
-    public function __construct($a)
+
+    protected function her($a, $b, $c)
     {
-        $this->a = $a;
+        $x = ($b * $b) - 4 * $a * $c;
+        return $x;
     }
 
-    protected $a;
-}
 
-class C extends B
-{
-    public function __construct($a, $b, $c)
+    public function q_solve($a, $b, $c)
     {
-        $this->b = $b;
-        $this->c = $c;
-        parent::__construct($a, $b);
+        $x = $this->her($a, $b, $c);
+
+        if ($a == 0) {
+            return $this->line_equation($b, $c);
+        }
+
+        if ($x > 0) {
+            return $this->X = array(-($b + sqrt($b ** 2 - 4 * $a * $c) / 2 * $a) - ($b - sqrt($b ** 2 - 4 * $a * $c)));
+        }
+
+        if ($x == 0) {
+            return $this->x = array(-($b / 2 * $a));
+        }
+
+        return $this->X = null;
+
     }
-    protected $c;
-    protected $b;
 }
 
-$a1 = new A();
-$a2 = new A();
-$a3 = new A();
-$b4 = new B($a3);
-$c5 = new C($a1, $a2, $b4);
-var_dump($c5);
+$a = new A();
+$b = new B();
+($a->line_equation(5,2));
+($b->q_solve(0,2,1));
+//var_dump($a);
+//var_dump($b);
+
