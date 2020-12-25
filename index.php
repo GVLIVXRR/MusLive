@@ -11,7 +11,16 @@ require_once "abramchuk\AbramchukException.php";
 ini_set("display_errors", 1);
 error_reporting(-1);
 
+
 try {
+    $dirLog = "log\\";
+    if (!file_exists($dirLog))
+    {
+        mkdir($dirLog, 0700);
+    }
+    $fileOpen = fopen("version", "r");
+    MyLog::log("Version program: " . fgets($fileOpen));
+    fclose($fileOpen);
     $b = new abramchuk\Quadratic();
     $values = array();
 
@@ -34,3 +43,4 @@ catch (abramchuk\AbramchukException $e) {
 }
 
 MyLog::write();
+

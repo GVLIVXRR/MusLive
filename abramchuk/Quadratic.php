@@ -1,35 +1,36 @@
 <?php
+
 namespace abramchuk;
+
 use core\EquationInterface;
 
 class Quadratic extends Linear implements EquationInterface
 {
-
     protected function disk($a, $b, $c)
     {
-        $x = ($b * $b) - 4 * $a * $c;
-        return $x;
+       return $x = $b * $b - 4 * $a * $c;
     }
-
-
     public function solve($a, $b, $c)
     {
-        $x = $this->disk($a, $b, $c);
-
-        if ($a == 0) {
-            return $this->line_equation($b, $c);
+        if ($a == 0)
+        {
+            return parent::line_equation($b, $c);
         }
-        MyLog::log("Определено что это квадратное уравнение");
-        if ($x > 0) {
-            return $this->x = array(-($b + sqrt($b ** 2 - 4 * $a * $c) / 2 * $a) - ($b - sqrt($b ** 2 - 4 * $a * $c)));
+        $dis = $this->disk($a, $b, $c);
+        if ($dis > 0)
+        {
+            MyLog::log('Это квадратное уравнение');
+            $squareDis = sqrt($dis);
+            return $this->x = array((-$b + $squareDis) / (2 * $a), (-$b - $squareDis) / (2 * $a));
         }
-
-        if ($x == 0) {
-            return $this->x = array(-($b / 2 * $a));
+        elseif ($dis == 0)
+        {
+            return $this->x = -$b / (2 * $a);
         }
-
+        elseif ($dis < 0)
+        {
+            throw new AbramchukException('Ошибка: Уравнение не имеет решений');
+        }
         throw new AbramchukException("Ошибка: уравнение не имеет корней");
-        //return $this->x = null;
-
     }
 }
