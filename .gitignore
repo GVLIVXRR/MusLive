@@ -2,3 +2,6 @@
 core
 log
 version
+vendor
+composer.phar
+build.php

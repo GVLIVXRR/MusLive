@@ -1,12 +1,12 @@
 <?php
 use abramchuk\MyLog;
-require_once "core\EquationInterface.php";
-require_once "core\LogInterface.php";
-require_once "core\LogAbstract.php";
-require_once "abramchuk\Linear.php";
-require_once "abramchuk\Quadratic.php";
-require_once "abramchuk\MyLog.php";
-require_once "abramchuk\AbramchukException.php";
+require_once "vendor\autoload.php";
+//require_once "core\LogInterface.php";
+//require_once "core\LogAbstract.php";
+//require_once "abramchuk\Linear.php";
+//require_once "abramchuk\Quadratic.php";
+//require_once "abramchuk\MyLog.php";
+//require_once "abramchuk\AbramchukException.php";
 
 ini_set("display_errors", 1);
 error_reporting(-1);

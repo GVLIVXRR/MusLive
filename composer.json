@@ -1,0 +1,36 @@
+{
+  "name": "gvlivxrr/muslive",
+  "description": "project-muslive",
+  "type": "project",
+  "license": "-",
+  "authors": [
+    {
+      "name": "abramchuk evgeny",
+      "email": "genyaabramchyk@gmail.comn"
+    }
+  ],
+
+  "minimum-stability": "dev",
+
+  "require": {
+    "gvlivxrr/muzfile2": "1.0"
+  },
+
+
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/rok9ru/trpo-core"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/GVLIVXRR/MUZFILE2.git"
+    }
+  ],
+ 
+  "scripts": {
+    "post-update-cmd": [
+        "git symbolic-ref --short -q HEAD>version"
+    ]
+}
+}
